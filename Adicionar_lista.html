@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Modificando uma lista</title>
+	<script type="text/javascript">
+		function adicionarElemento() {
+			var elemento = document.getElementById("novoElemento").value;
+			var listaInteira = document.getElementById("lista").innerHTML;
+
+			listaInteira = listaInteira + "<li>" + elemento + "</li>";
+
+			document.getElementById("lista").innerHTML = listaInteira;
+		}
+	</script>
+</head>
+<body>
+	<h3>Modificando uma lista</h3>
+
+	<ul id="lista">
+		<li>Elemento 1</li>
+		<li>Elemento 2</li>
+		<li>Elemento 3</li>
+	</ul>
+
+	<input type="text" placeholder="Novo elemento..." id="novoElemento">
+	<button onclick="adicionarElemento()">Adicionar à lista</button>
+
+</body>
+</html>
