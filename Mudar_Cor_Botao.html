@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Alterar cor</title>
+	<script type="text/javascript">
+		function alterarCor() {
+			var cor = Math.floor(Math.random() * 1000000);
+
+			String(cor);
+
+			document.getElementById("botao").style = 'background-color: #' + cor + '; width: 250px; height: 150px; font-size: 20px; color: white;';
+		}
+
+	</script>
+</head>
+<body>
+	<button onClick="alterarCor()" id="botao" style="width: 250px; height: 150px; font-size: 20px">CLIQUE AQUI PARA TROCAR COR</button>
+</body>
+</html>
