@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Estoure o Balão!</title>
+</head>
+
+<script type="text/javascript">
+	var pontuacao = 0;
+
+	function criarBola() {
+		var bola = document.createElement("div");
+
+		bola.setAttribute("class","bola");
+		
+		var posx = 100 + Math.floor(Math.random() * 1000);
+		var posy = 100 + Math.floor(Math.random() * 400);
+		var cor = Math.floor(Math.random() * 1000000);
+
+		bola.setAttribute("style","left: " + posx + "px; top: " + posy + "px; background-color: #" + cor + ";");
+
+		bola.setAttribute("onclick","estourarBola(this)");
+
+		document.body.appendChild(bola);
+	}
+
+	function estourarBola(elemento) {
+		document.body.removeChild(elemento);
+		pontuacao++;
+		document.getElementById('pontos').innerHTML = "<h3> Pontuação: " + pontuacao + "</h3>";
+
+		switch(pontuacao) {
+			case 1:
+				document.getElementById('status').innerHTML = "<h3> NÍVEL 1!</h3>";
+				setTimeout(setInterval(criarBola, 1000), 1000);
+				break;
+
+			case 10 :
+				document.getElementById('status').innerHTML = "<h3> NÍVEL 2!</h3>";
+				setTimeout(setInterval(criarBola, 900), 1000);
+				break;
+
+			case 20:
+				document.getElementById('status').innerHTML = "<h3> NÍVEL 3!</h3>";
+				setTimeout(setInterval(criarBola, 800), 1000);
+				break;
+
+			case 30:
+				document.getElementById('status').innerHTML = "<h3> NÍVEL 4!</h3>";
+				setTimeout(setInterval(criarBola, 700), 1000);
+				break;
+		}
+	}
+
+	function iniciarJogo() {
+		setInterval(criarBola, 1000);
+	}
+
+</script>
+
+<style type="text/css">
+	.bola {
+		height: 50px;
+		width: 50px;
+		position: absolute;
+		border-radius: 25px;
+		border: solid 1px black;
+	}
+</style>
+
+<body onLoad="criarBola()">
+	<center><p id="pontos"></p></center>
+	<center><p id="status"></p></center>
+</body>
+</html>
