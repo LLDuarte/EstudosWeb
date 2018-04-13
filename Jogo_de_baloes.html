@@ -7,6 +7,7 @@
 
 <script type="text/javascript">
 	var pontuacao = 0;
+	var velocidade;
 
 	function criarBola() {
 		var bola = document.createElement("div");
@@ -32,28 +33,44 @@
 		switch(pontuacao) {
 			case 1:
 				document.getElementById('status').innerHTML = "<h3> NÍVEL 1!</h3>";
-				setTimeout(setInterval(criarBola, 1000), 1000);
+				clearInterval(velocidade);
+				velocidade = setInterval(criarBola, 1000);
 				break;
 
 			case 10 :
 				document.getElementById('status').innerHTML = "<h3> NÍVEL 2!</h3>";
-				setTimeout(setInterval(criarBola, 900), 1000);
+				clearInterval(velocidade);
+				velocidade = setInterval(criarBola, 900);
 				break;
 
 			case 20:
 				document.getElementById('status').innerHTML = "<h3> NÍVEL 3!</h3>";
-				setTimeout(setInterval(criarBola, 800), 1000);
+				clearInterval(velocidade);
+				velocidade = setInterval(criarBola, 800);
 				break;
 
 			case 30:
 				document.getElementById('status').innerHTML = "<h3> NÍVEL 4!</h3>";
-				setTimeout(setInterval(criarBola, 700), 1000);
+				clearInterval(velocidade);
+				velocidade = setInterval(criarBola, 700);
+				break;
+
+			case 40:
+				document.getElementById('status').innerHTML = "<h3> NÍVEL 5! - AGORA O BICHO PEGA!</h3>";
+				clearInterval(velocidade);
+				velocidade = setInterval(criarBola, 600);
+				break;
+
+			case 50:
+				document.getElementById('status').innerHTML = "<h3> NÍVEL 6! - AGORA O BICHO PEGA!</h3>";
+				clearInterval(velocidade);
+				velocidade = setInterval(criarBola, 500);
 				break;
 		}
 	}
 
 	function iniciarJogo() {
-		setInterval(criarBola, 1000);
+		velocidade = setInterval(criarBola, 1000);
 	}
 
 </script>
@@ -68,7 +85,7 @@
 	}
 </style>
 
-<body onLoad="criarBola()">
+<body onLoad="iniciarJogo()">
 	<center><p id="pontos"></p></center>
 	<center><p id="status"></p></center>
 </body>
