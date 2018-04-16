@@ -66,6 +66,35 @@
 				clearInterval(velocidade);
 				velocidade = setInterval(criarBola, 500);
 				break;
+
+			case 60:
+				document.getElementById('status').innerHTML = "<h3> NÍVEL 7! - AGORA O BICHO PEGA MAIS AINDA!</h3>";
+				clearInterval(velocidade);
+				velocidade = setInterval(criarBola, 400);
+				break;
+
+			case 70:
+				document.getElementById('status').innerHTML = "<h3> NÍVEL 8! - FIM DO MUNDO!</h3>";
+				clearInterval(velocidade);
+				velocidade = setInterval(criarBola, 300);
+				break;
+
+			case 80:
+				document.getElementById('status').innerHTML = "<h3> NÍVEL 9! - CORRE, BIXO!</h3>";
+				clearInterval(velocidade);
+				velocidade = setInterval(criarBola, 200);
+				break;
+
+			case 90:
+				document.getElementById('status').innerHTML = "<h3> NÍVEL 10! - ACABOU, JA ERA!</h3>";
+				clearInterval(velocidade);
+				velocidade = setInterval(criarBola, 100);
+				break;
+
+			case 100:
+				document.getElementById('status').innerHTML = "<h1> ACABOU MESMO! VOCÊ VENCEU! </h1>";
+				clearInterval(velocidade);
+				break;
 		}
 	}
 
